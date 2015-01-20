@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="messageResource" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="default" extends="struts-default">
+		<!-- ordermgmt start -->
+		<action name="ordermgmt" class="com.action.OrderAction" method="getAllData">
+			<result name="success">/WEB-INF/ordermgmt.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="addorder" class="com.action.OrderAction" method="addOrder">
+			<result name="success">/WEB-INF/ordermgmt.jsp</result>
+			<result name="error">/WEB-INF/adminerror.jsp</result>
+		</action>
+		<action name="addorderpage" class="com.action.OrderAction"
+			method="addOrderPage">
+			<result name="success">/WEB-INF/addorder.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="editorder" class="com.action.OrderAction" method="editOrder">
+			<result name="success">/WEB-INF/ordermgmt.jsp</result>
+			<result name="error">/WEB-INF/adminerror.jsp</result>
+		</action>
+		<action name="editorderpage" class="com.action.OrderAction"
+			method="editOrderPage">
+			<result name="success">/WEB-INF/editorder.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="deleteorder" class="com.action.OrderAction"
+			method="deleteOrder">
+			<result name="success">/WEB-INF/ordermgmt.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<!-- ordermgmt end -->
+
+		<!-- trainmgmt start -->
+		<action name="trainmgmt" class="com.action.TrainAction" method="findAllData">
+			<result name="success">/WEB-INF/trainmgmt.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="addtrain" class="com.action.TrainAction" method="addTrain">
+			<result name="success">/WEB-INF/trainmgmt.jsp</result>
+			<result name="error">/WEB-INF/adminerror.jsp</result>
+		</action>
+		<action name="addtrainpage" class="com.action.TrainAction"
+			method="addTrainPage">
+			<result name="success">/WEB-INF/addtrain.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="edittrain" class="com.action.TrainAction" method="editTrain">
+			<result name="success">/WEB-INF/trainmgmt.jsp</result>
+			<result name="error">/WEB-INF/adminerror.jsp</result>
+		</action>
+		<action name="edittrainpage" class="com.action.TrainAction"
+			method="editTrainPage">
+			<result name="success">/WEB-INF/edittrain.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="deletetrain" class="com.action.TrainAction"
+			method="deleteTrain">
+			<result name="success">/WEB-INF/trainmgmt.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<!-- trainmgmt end -->
+
+		<!-- usermgmt start -->
+		<action name="usermgmt" class="com.action.UserAction" method="findAllData">
+			<result name="success">/WEB-INF/usermgmt.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="adduser" class="com.action.UserAction" method="addUser">
+			<result name="success">/WEB-INF/usermgmt.jsp</result>
+			<result name="error">/WEB-INF/adminerror.jsp</result>
+		</action>
+		<action name="adduserpage" class="com.action.UserAction"
+			method="addUserPage">
+			<result name="success">/WEB-INF/adduser.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="edituser" class="com.action.UserAction" method="editUser">
+			<result name="success">/WEB-INF/usermgmt.jsp</result>
+			<result name="error">/WEB-INF/adminerror.jsp</result>
+		</action>
+		<action name="edituserpage" class="com.action.UserAction"
+			method="editUserPage">
+			<result name="success">/WEB-INF/edituser.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="deleteuser" class="com.action.UserAction" method="deleteUser">
+			<result name="success">/WEB-INF/usermgmt.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<!-- usermgmt end -->
+
+		<!-- login & jump -->
+		<action name="loginProcess" class="com.action.LoginAction"
+			method="goLogin">
+			<result name="success">/WEB-INF/${jumpPage}.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="logoutProccess" class="com.action.LoginAction"
+			method="goLogout">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="goadmin" class="com.action.LoginAction" method="goAdmin">
+			<result name="success">/WEB-INF/admin.jsp</result>
+		</action>
+		<action name="gouser" class="com.action.LoginAction" method="goUser">
+			<result name="success">/WEB-INF/user.jsp</result>
+		</action>
+
+		<!-- login end -->
+
+		<!-- ticket start -->
+		<action name="userorderaddpage" class="com.action.OrderUserAction"
+			method="userOrderAddPage">
+			<result name="success">/WEB-INF/userorderadd.jsp</result>
+			<result name="error">/WEB-INF/index.jsp</result>
+		</action>
+		<action name="userorderpage" class="com.action.OrderUserAction"
+			method="userOrderPage">
+			<result name="success">/WEB-INF/userorder.jsp</result>
+			<result name="error">/WEB-INF/index.jsp</result>
+		</action>
+		<action name="userOrderAdd" class="com.action.OrderUserAction"
+			method="userOrderAdd">
+			<result name="success">/WEB-INF/user.jsp</result>
+			<result name="error">/WEB-INF/usererror.jsp</result>
+		</action>
+		<action name="userOrderDelete" class="com.action.OrderUserAction"
+			method="userOrderDelete">
+			<result name="success">/WEB-INF/userorder.jsp</result>
+			<result name="error">/WEB-INF/index.jsp</result>
+		</action>
+		<!-- ticket end -->
+	</package>
+</struts>    
